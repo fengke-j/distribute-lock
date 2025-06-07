@@ -1,0 +1,2 @@
+com.fk.distribute.lock.config.DistributedLockAutoConfig
+com.fk.distribute.lock.config.LockKeyGeneratorAutoConfig
