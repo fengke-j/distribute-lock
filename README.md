@@ -1,4 +1,4 @@
-# ucmp-distribute-lock
+# distribute-lock
 
 
 
