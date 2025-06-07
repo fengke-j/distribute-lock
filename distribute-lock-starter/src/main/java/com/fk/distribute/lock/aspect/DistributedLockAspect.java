@@ -35,16 +35,16 @@ public class DistributedLockAspect extends AbstractLockAspect{
         RLock lock = redissonClient.getLock(lockName);
 
         try{
-            log.info("Attempting to acquire lock for label:{} {}", label,lockName);
+            log.debug("Attempting to acquire lock for label:{} {}", label,lockName);
             //尝试获取锁
             boolean isLocked = lock.tryLock(distributedLock.waitTime(), distributedLock.leaseTime(), distributedLock.timeUnit());
             if(isLocked){
-                log.info("Lock acquired for label:{} {}",label, lockName);
+                log.debug("Lock acquired for label:{} {}",label, lockName);
                 try {
                     //执行方法
                     return joinPoint.proceed();
                 } finally {
-                    log.info("Lock released for label:{} {}", label,lockName);
+                    log.debug("Lock released for label:{} {}", label,lockName);
                     //释放锁
                     lock.unlock();
                 }

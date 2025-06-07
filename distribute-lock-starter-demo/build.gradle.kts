@@ -18,8 +18,6 @@ dependencies {
 
     implementation("org.springframework.boot:spring-boot-starter-web:3.5.0")
     implementation("com.fk.distribute.lock:distribute-lock-starter:1.0.0")
-    implementation("org.springframework.boot:spring-boot-starter-aop:3.5.0")
-    runtimeOnly("org.aspectj:aspectjweaver:1.9.24")
 }
 
 tasks.test {

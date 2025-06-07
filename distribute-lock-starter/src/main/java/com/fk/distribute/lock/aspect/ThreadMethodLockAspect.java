@@ -54,7 +54,7 @@ public class ThreadMethodLockAspect extends AbstractLockAspect{
 
     private Object useThreadMethodLock(ProceedingJoinPoint joinPoint) throws Throwable {
         String lockName = getLockName(joinPoint);
-        log.info("lockName: {}", lockName);
+        log.debug("lockName: {}", lockName);
 
         LockWrapper lockWrapper = lockMap.compute(lockName, (key, oldWrapper) -> {
             if (oldWrapper == null) {
